@@ -40,10 +40,11 @@ presenter_view_app_name=$2
 channel1=$3
 channel2=$4
 
-common_path="${script_path}/../../common"
 
-. ${common_path}/utils/scripts/func_util.sh
-. ${common_path}/utils/scripts/func_deploy.sh
+. ${script_path}/func_util.sh
+. ${script_path}/func_deploy.sh
+
+app_path="${script_path}/.."
 
 function main()
 {
@@ -58,14 +59,14 @@ function main()
     fi
 
     echo "Prepare app configuration..."
-    cp -r ${script_path}/videoanalysispersonapp/graph_deploy.config ${script_path}/videoanalysispersonapp/out/graph.config
-    sed -i "s#\${template_channel1}#${channel1}#g" ${script_path}/videoanalysispersonapp/out/graph.config
-    sed -i "s#\${template_channel2}#${channel2}#g" ${script_path}/videoanalysispersonapp/out/graph.config
-    sed -i "s/\${template_app_name}/${presenter_view_app_name}/g" ${script_path}/videoanalysispersonapp/out/graph.config
+    cp -r ${app_path}/videoanalysispersonapp/graph_deploy.config ${app_path}/videoanalysispersonapp/out/graph.config
+    sed -i "s#\${template_channel1}#${channel1}#g" ${app_path}/videoanalysispersonapp/out/graph.config
+    sed -i "s#\${template_channel2}#${channel2}#g" ${app_path}/videoanalysispersonapp/out/graph.config
+    sed -i "s/\${template_app_name}/${presenter_view_app_name}/g" ${app_path}/videoanalysispersonapp/out/graph.config
     
     parse_remote_port
     
-    upload_file ${script_path}/videoanalysispersonapp/out/graph.config "~/HIAI_PROJECTS/ascend_workspace/videoanalysispersonapp/out"
+    upload_file ${app_path}/videoanalysispersonapp/out/graph.config "~/HIAI_PROJECTS/ascend_workspace/videoanalysispersonapp/out"
     if [[ $? -ne 0 ]];then
         echo "ERROR: sync ${script_path}/videoanalysispersonapp/graph.config ${remote_host}:./HIAI_PROJECTS/ascend_workspace/videoanalysispersonapp/out failed, please check /var/log/syslog for details."
         exit 1

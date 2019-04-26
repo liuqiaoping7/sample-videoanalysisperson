@@ -32,43 +32,34 @@
 #   =======================================================================
 
 # ************************Variable*********************************************
+
 script_path="$( cd "$(dirname "$0")" ; pwd -P )"
 
-tools_version=$1
+remote_host=$1
 
-common_path="${script_path}/../../common"
+HOST_LIB_PATH="${HOME}/ascend_ddk/host/lib"
+DEVICE_LIB_PATH="${HOME}/ascend_ddk/device/lib"
 
-. ${common_path}/utils/scripts/func_model.sh
+. ${script_path}/func_deploy.sh
+. ${script_path}/func_util.sh
 
 main()
 {
-    model_name="vgg_ssd"
-    model_remote_path="computer_vision/object_detect"
-    prepare ${model_name} ${model_remote_path}
+    check_ip_addr ${remote_host}
+    if [[ $? -ne 0 ]];then
+        echo "ERROR: invalid host ip, please check your command format: ./deploy_sdk.sh host_ip."
+        exit 1
+    fi
+
+    #parse remote port
+    parse_remote_port
+
+    upload_file "${DEVICE_LIB_PATH}/libascend_ezdvpp.so" "~/HIAI_PROJECTS/ascend_lib"
     if [ $? -ne 0 ];then
         exit 1
     fi
-    model_name="pedestrian"
-    model_remote_path="computer_vision/classification"
-    prepare ${model_name} ${model_remote_path}
-    if [ $? -ne 0 ];then
-        exit 1
-    fi
-    model_name="inception_age"
-    model_remote_path="computer_vision/classification"
-    prepare ${model_name} ${model_remote_path}
-    if [ $? -ne 0 ];then
-        exit 1
-    fi
-    model_name="inception_gender"
-    model_remote_path="computer_vision/classification"
-    prepare ${model_name} ${model_remote_path}
-    if [ $? -ne 0 ];then
-        exit 1
-    fi
-    model_name="face_detection"
-    model_remote_path="computer_vision/object_detect"
-    prepare ${model_name} ${model_remote_path}
+    
+    upload_file "${HOST_LIB_PATH}/libpresenteragent.so" "~/HIAI_PROJECTS/ascend_lib"
     if [ $? -ne 0 ];then
         exit 1
     fi
