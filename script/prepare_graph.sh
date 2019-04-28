@@ -38,28 +38,29 @@ script_path="$( cd "$(dirname "$0")" ; pwd -P )"
 remote_host=$1
 download_mode=$2
 
-common_path="${script_path}/../../common"
+. ${script_path}/func_deploy.sh
+. ${script_path}/func_util.sh
 
-. ${common_path}/utils/scripts/func_util.sh
+app_path="${script_path}/.."
 
 function modify_graph()
 {
     echo "Modify presenter server information in graph.config..."
-    cp -r ${script_path}/videoanalysispersonapp/graph_template.config ${script_path}/videoanalysispersonapp/graph_deploy.config
-    presenter_ip=`grep presenter_server_ip ${common_path}/presenter/server/video_analysis/config/config.conf | awk -F '=' '{print $2}' | sed 's/[^0-9.]//g'`
+    cp -r ${app_path}/videoanalysispersonapp/graph_template.config ${app_path}/videoanalysispersonapp/graph_deploy.config
+    presenter_ip=`grep presenter_server_ip ${app_path}/presenterserver/video_analysis/config/config.conf | awk -F '=' '{print $2}' | sed 's/[^0-9.]//g'`
     if [[ $? -ne 0 ]];then
-        echo "ERROR: get presenter server ip failed, please check ${common_path}/presenter/server/video_analysis/config/config.conf."
+        echo "ERROR: get presenter server ip failed, please check ${app_path}/presenterserver/video_analysis/config/config.conf."
         return 1
     fi
     
-    presenter_port=`grep presenter_server_port ${common_path}/presenter/server/video_analysis/config/config.conf | awk -F '=' '{print $2}' | sed 's/[^0-9]//g'`
+    presenter_port=`grep presenter_server_port ${app_path}/presenterserver/video_analysis/config/config.conf | awk -F '=' '{print $2}' | sed 's/[^0-9]//g'`
     if [[ $? -ne 0 ]];then
-        echo "ERROR: get presenter server port failed, please check ${common_path}/presenter/server/video_analysis/config/config.conf."
+        echo "ERROR: get presenter server port failed, please check ${app_path}/presenterserver/video_analysis/config/config.conf."
         return 1
     fi
     
-    sed -i "s/\${template_presenter_ip}/${presenter_ip}/g" ${script_path}/videoanalysispersonapp/graph_deploy.config
-    sed -i "s/\${template_presenter_port}/${presenter_port}/g" ${script_path}/videoanalysispersonapp/graph_deploy.config
+    sed -i "s/\${template_presenter_ip}/${presenter_ip}/g" ${app_path}/videoanalysispersonapp/graph_deploy.config
+    sed -i "s/\${template_presenter_port}/${presenter_port}/g" ${app_path}/videoanalysispersonapp/graph_deploy.config
     return 0
 }
 
