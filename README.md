@@ -41,11 +41,11 @@ Before running the application, obtain the source code package and configure the
 1.  Access the root directory where the video analysis application code is located as the Mind Studio installation user, for example,  _**/home/ascend/sample-videoanalysisperson**_
 2.  <a name="en-us_topic_0167344118_li08019112542"></a>Run the deployment script to prepare the project environment, including compiling and deploying the ascenddk public library, downloading the network model, and configuring Presenter Server.
 
-    **bash deploy.sh **_host\_ip_ _model\_mode_
+    **bash deploy.sh** _host\_ip_ _model\_mode_
 
     -   _host\_ip_: For the Atlas 200 DK developer board, this parameter indicates the IP address of the developer board.For the AI acceleration cloud server, this parameter indicates the IP address of the host.
 
-    -   _model\_mode_  indicates the deployment mode of the model file. The value can be  **local**  or** internet**. The default setting is  **internet**.
+    -   _model\_mode_  indicates the deployment mode of the model file. The value can be  **local**  or **internet**. The default setting is  **internet**.
         -   **local**: If the Ubuntu system where Mind Studio is located is not connected to the network, use the local mode. In this case, you need to have downloaded the model file and the dependent common code library to the  **sample-videoanalysisperson/script**  directory by referring to  [Downloading Network Models and Dependency Code Library](#en-us_topic_0167344118_section083811318334).
         -   **internet**: If the Ubuntu system where Mind Studio is located is connected to the network, use the Internet mode. In this case, download the model file and  dependency code library online.
 
@@ -141,7 +141,7 @@ Before running the application, obtain the source code package and configure the
 
     Example command:
 
-    **bash stop\_videoanalysispersonapp.sh **_192.168.1.2_
+    **bash stop\_videoanalysispersonapp.sh** _192.168.1.2_
 
 -   **Stopping the Presenter Server Service**
 
