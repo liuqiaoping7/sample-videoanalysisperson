@@ -169,6 +169,8 @@ Before running the application, obtain the source code package and configure the
 
     The models used in the Ascend DK open source applications are converted models that adapt to the Ascend 310 chipset. For details about how to download this kind of models and the original network models, see  [Table 1](#en-us_topic_0167344118_table0531392153). If you have a better model solution, you are welcome to share it at  [https://github.com/Ascend/models](https://github.com/Ascend/models).
 
+    Download the network models files (.om files) to the **sample-videoanalysisperson/script** directory.
+
     **Table  1**  Models used in Atlas DK open source applications
 
     <a name="en-us_topic_0167344118_table0531392153"></a>
@@ -241,7 +243,9 @@ Before running the application, obtain the source code package and configure the
     </tbody>
     </table>
 
--   Download the dependent software library
+-   Download the dependent software libraries
+
+    Download the dependent software libraries to the **sample-videoanalysisperson/script** directory.
 
     **Table  2**  Download the dependent software library
 
@@ -259,7 +263,7 @@ Before running the application, obtain the source code package and configure the
     <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0167344118_p52110611584"><a name="en-us_topic_0167344118_p52110611584"></a><a name="en-us_topic_0167344118_p52110611584"></a>Encapsulates the dvpp interface and provides image and video processing capabilities, such as color gamut conversion and image / video conversion</p>
     </td>
     <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0167344118_p31774315318"><a name="en-us_topic_0167344118_p31774315318"></a><a name="en-us_topic_0167344118_p31774315318"></a><a href="https://github.com/Ascend/sdk-ezdvpp" target="_blank" rel="noopener noreferrer">https://github.com/Ascend/sdk-ezdvpp</a></p>
-    <p id="en-us_topic_0167344118_p1634523015710"><a name="en-us_topic_0167344118_p1634523015710"></a><a name="en-us_topic_0167344118_p1634523015710"></a>After the download, keep the folder name <span class="filepath" id="en-us_topic_0167344118_filepath1324864613582"><a name="en-us_topic_0167344118_filepath1324864613582"></a><a name="en-us_topic_0167344118_filepath1324864613582"></a><b>sdk-ezdvpp</b></span>。</p>
+    <p id="en-us_topic_0167344118_p1634523015710"><a name="en-us_topic_0167344118_p1634523015710"></a><a name="en-us_topic_0167344118_p1634523015710"></a>After the download, keep the folder name <span class="filepath" id="en-us_topic_0167344118_filepath1324864613582"><a name="en-us_topic_0167344118_filepath1324864613582"></a><a name="en-us_topic_0167344118_filepath1324864613582"></a><b>ezdvpp</b></span>。</p>
     </td>
     </tr>
     <tr id="en-us_topic_0167344118_row101773315313"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0167344118_p217773153110"><a name="en-us_topic_0167344118_p217773153110"></a><a name="en-us_topic_0167344118_p217773153110"></a>Presenter Agent</p>
