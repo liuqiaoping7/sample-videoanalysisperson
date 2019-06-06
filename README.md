@@ -78,7 +78,7 @@ Before running the application, obtain the source code package and configure the
     **Figure  2**  Starting the Presenter Server process<a name="en-us_topic_0167344118_fig69531305324"></a>  
     ![](doc/source/img/starting-the-presenter-server-process.png "starting-the-presenter-server-process")
 
-    Use the URL shown in the preceding figure to log in to Presenter Server \(only the Chrome browser is supported\). The IP address is that entered in  [2](#en-us_topic_0167344118_li08019112542)  and the default port number is  **7005**. The following figure indicates that Presenter Server is started successfully.
+    Use the URL shown in the preceding figure to log in to Presenter Server \(only the Chrome browser is supported\). The IP address is that entered in  [2](#en-us_topic_0167344118_li08019112542)  and the default port number is  **7011**. The following figure indicates that Presenter Server is started successfully.
 
     **Figure  3**  Home page<a name="en-us_topic_0167344118_fig64391558352"></a>  
     ![](doc/source/img/home-page.png "home-page")
