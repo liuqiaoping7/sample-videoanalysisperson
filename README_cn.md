@@ -40,7 +40,7 @@
 
 ## 部署<a name="zh-cn_topic_0167343795_section1759513564117"></a>
 
-1.  以Mind Studio安装用户进入videoanalysis应用代码所在根目录，如_**/home/ascend/sample-videoanalysisperson**_。
+1.  以Mind Studio安装用户进入videoanalysis应用代码所在根目录，如 _/home/ascend/sample-videoanalysisperson_。
 2.  <a name="zh-cn_topic_0167343795_li08019112542"></a>执行部署脚本，进行工程环境准备，包括ascenddk公共库的编译与部署、网络模型的下载、Presenter Server服务器的配置等操作。
 
     **bash deploy.sh** _host\_ip_ _model\_mode_
@@ -100,7 +100,7 @@
 
     在“/home/ascend/sample-videoanalysisperson“目录下执行如下命令运行Video Analysis应用程序。
 
-    **bash run\_videoanalysispersonapp.sh** _host\_ip_ _ __presenter\_view\_appname__ channel1_ _\[channel2\]_   &
+    **bash run\_videoanalysispersonapp.sh** _host\_ip_  _presenter\_view\_appname_ _channel1_ _\[channel2\]_   &
 
     -   _host\_ip_：对于Atlas 200 DK开发者板，即为开发者板的IP地址。对于AI加速云服务器，即为Host侧的IP地址。
     -   _presenter\_view\_app\_name_：用户自定义的在PresenterServer界面展示的View Name。
@@ -140,7 +140,7 @@
 
     **bash stop\_videoanalysispersonapp.sh** _host\_ip_
 
-    _host\_ip：_对于Atlas 200 DK开发者板，即为开发者板的IP地址。对于AI加速云服务器，即为Host的IP地址。。
+    _host\_ip_：对于Atlas 200 DK开发者板，即为开发者板的IP地址。对于AI加速云服务器，即为Host的IP地址。。
 
     命令示例：
 
