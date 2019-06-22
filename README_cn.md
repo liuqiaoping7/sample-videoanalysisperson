@@ -71,7 +71,7 @@
     **python3 presenterserver/presenter\_server.py --app video\_analysis\_person &**
 
     >![](doc/source/img/icon-note.gif) **说明：**   
-    >“presenter\_server.py“在当前目录的“presenterserve“目录下，可以在此目录下执行**python3 presenter\_server.py -h**或者**python3 presenter\_server.py --help**查看“presenter\_server.py“的使用方法。  
+    >“presenter\_server.py“在当前目录的“presenterserver“目录下，可以在此目录下执行**python3 presenter\_server.py -h**或者**python3 presenter\_server.py --help**查看“presenter\_server.py“的使用方法。  
 
     如[图2](#zh-cn_topic_0167343795_fig69531305324)所示，表示presenter\_server的服务启动成功。
 

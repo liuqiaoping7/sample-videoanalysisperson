@@ -15,7 +15,7 @@ Before running the application, obtain the source code package and configure the
 
 1.  Obtain the source code package.
 
-    Download all the code in the sample-facedetection repository at  [https://github.com/Ascend/sample-videoanalysisperson](https://github.com/Ascend/sample-videoanalysisperson)  to any directory on Ubuntu Server where Mind Studio is located as the Mind Studio installation user, for example,  _/home/ascend/sample-videoanalysisperson_.
+    Download all the code in the sample-videoanalysisperson repository at  [https://github.com/Ascend/sample-videoanalysisperson](https://github.com/Ascend/sample-videoanalysisperson)  to any directory on Ubuntu Server where Mind Studio is located as the Mind Studio installation user, for example,  _/home/ascend/sample-videoanalysisperson_.
 
 2.  Log in to Ubuntu Server where Mind Studio is located as the Mind Studio installation user and set the environment variable  **DDK\_HOME**.
 
@@ -40,7 +40,7 @@ Before running the application, obtain the source code package and configure the
 
 ## Deployment<a name="en-us_topic_0167344118_section254863302012"></a>
 
-1.  Access the root directory where the video analysis application code is located as the Mind Studio installation user, for example,  _**/home/ascend/sample-videoanalysisperson**_
+1.  Access the root directory where the human detection application code is located as the Mind Studio installation user, for example,  _**/home/ascend/sample-videoanalysisperson**_
 2.  <a name="en-us_topic_0167344118_li08019112542"></a>Run the deployment script to prepare the project environment, including compiling and deploying the ascenddk public library, downloading the network model, and configuring Presenter Server.
 
     **bash deploy.sh** _host\_ip_ _model\_mode_
@@ -71,7 +71,7 @@ Before running the application, obtain the source code package and configure the
     **python3 presenterserver/presenter\_server.py --app video\_analysis\_person &**
 
     >![](doc/source/img/icon-note.gif) **NOTE:**   
-    >**presenter\_server.py**  is located in the  **presenterserve**  directory. You can run the  **python3 presenter\_server.py -h**  or  **python3 presenter\_server.py --help**  command in this directory to view the usage method of  **presenter\_server.py**.  
+    >**presenter\_server.py**  is located in the  **presenterserver**  directory. You can run the  **python3 presenter\_server.py -h**  or  **python3 presenter\_server.py --help**  command in this directory to view the usage method of  **presenter\_server.py**.  
 
     [Figure 2](#en-us_topic_0167344118_fig69531305324)  shows that the presenter\_server service is started successfully.
 
