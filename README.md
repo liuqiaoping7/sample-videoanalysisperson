@@ -98,7 +98,7 @@ Before running the application, obtain the source code package and configure the
 
 1.  Run the video analysis application.
 
-    Run the following command in the  **/home/ascend/sample-videoanalysiscar**  directory to start the video analysis application:
+    Run the following command in the  **/home/ascend/sample-videoanalysisperson**  directory to start the video analysis application:
 
     **bash run\_videoanalysispersonapp.sh** _host\_ip_ _presenter\_view\_appname_ _channel1_ _\[channel2\]_  &
 
