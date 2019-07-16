@@ -41,7 +41,7 @@
 ## 部署<a name="zh-cn_topic_0167343795_section1759513564117"></a>
 
 1.  以MindSpore Studio安装用户进入人体检测应用代码所在根目录，如 _/home/ascend/sample-videoanalysisperson_。
-2.  <a name="zh-cn_topic_0167343795_li08019112542"></a>执行部署脚本，进行工程环境准备，包括ascenddk公共库的编译与部署、网络模型的下载、Presenter Server服务器的配置等操作。
+2.  <a name="zh-cn_topic_0167343795_li08019112542"></a>执行部署脚本，进行工程环境准备，包括ascenddk公共库的编译与部署、网络模型的下载、Presenter Server服务器的配置等操作，其中Presenter Server用于接收Application发送过来的数据并通过浏览器进行结果展示。
 
     **bash deploy.sh** _host\_ip_ _model\_mode_
 
@@ -57,7 +57,7 @@
     **bash deploy.sh 192.168.1.2 internet**
 
     -   当提示“Please choose one to show the presenter in browser\(default: 127.0.0.1\):“时，请输入在浏览器中访问Presenter Server服务所使用的IP地址（一般为访问MindSpore Studio的IP地址）。
-    -   当提示“Please input a absolute path to storage video analysis data:“时，请输入MindSpore Studio中已存在的绝对路径用于存储视频解析数据，此路径MindSpore Studio用户需要有读写权限。
+    -   当提示“Please input a absolute path to storage video analysis data:“时，请输入MindSpore Studio中的绝对路径用于存储视频解析数据，此路径MindSpore Studio用户需要有读写权限，若此路径不存在，脚本会自动创建。
 
     如[图1](#zh-cn_topic_0167343795_fig184321447181017)所示，请在“Current environment valid ip list“中选择通过浏览器访问Presenter Server服务使用的IP地址，并输入存储视频解析数据的路径。
 
@@ -103,7 +103,7 @@
     **bash run\_videoanalysispersonapp.sh** _host\_ip_  _presenter\_view\_appname_ _channel1_ _\[channel2\]_   &
 
     -   _host\_ip_：对于Atlas 200 DK开发者板，即为开发者板的IP地址。对于AI加速云服务器，即为Host侧的IP地址。
-    -   _presenter\_view\_app\_name_：用户自定义的在PresenterServer界面展示的View Name。
+    -   _presenter\_view\_app\_name_：用户自定义的在PresenterServer界面展示的View Name，此View Name需要在Presenter Server展示界面唯一。
     -   _channel1_：为Host侧的视频文件的绝对路径。
     -   _channel2_：为RTSP视频流的URL。
 
@@ -276,8 +276,8 @@
     </td>
     <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0167343795_p1088663019246"><a name="zh-cn_topic_0167343795_p1088663019246"></a><a name="zh-cn_topic_0167343795_p1088663019246"></a>与Presenter Server进行交互的API接口。</p>
     </td>
-    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0167343795_p1988683012245"><a name="zh-cn_topic_0167343795_p1988683012245"></a><a name="zh-cn_topic_0167343795_p1988683012245"></a><a href="https://github.com/Ascend/sdk-presenter/tree/master/presenteragent" target="_blank" rel="noopener noreferrer">https://github.com/Ascend/sdk-presenter/tree/master/presenteragent</a></p>
-    <p id="zh-cn_topic_0167343795_p10886230182416"><a name="zh-cn_topic_0167343795_p10886230182416"></a><a name="zh-cn_topic_0167343795_p10886230182416"></a>下载后请保持文件夹名称为presenteragent。</p>
+    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0167343795_p1988683012245"><a name="zh-cn_topic_0167343795_p1988683012245"></a><a name="zh-cn_topic_0167343795_p1988683012245"></a><a href="https://github.com/Ascend/sdk-presenter/tree/master" target="_blank" rel="noopener noreferrer">https://github.com/Ascend/sdk-presenter/tree/master</a></p>
+    <p id="zh-cn_topic_0167343795_p10886230182416"><a name="zh-cn_topic_0167343795_p10886230182416"></a><a name="zh-cn_topic_0167343795_p10886230182416"></a>请获取此路径下的presenteragent文件夹，下载后请保持文件夹名称为presenteragent。</p>
     </td>
     </tr>
     <tr id="zh-cn_topic_0167343795_row38874306249"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0167343795_p188619304247"><a name="zh-cn_topic_0167343795_p188619304247"></a><a name="zh-cn_topic_0167343795_p188619304247"></a>开源工具ffmpeg</p>
@@ -294,7 +294,7 @@
     </td>
     <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0167343795_p0887153052413"><a name="zh-cn_topic_0167343795_p0887153052413"></a><a name="zh-cn_topic_0167343795_p0887153052413"></a>Presenter Server依赖的Python库</p>
     </td>
-    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0167343795_p9887193012248"><a name="zh-cn_topic_0167343795_p9887193012248"></a><a name="zh-cn_topic_0167343795_p9887193012248"></a>请自行搜索相关源进行安装。</p>
+    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0167343795_p9887193012248"><a name="zh-cn_topic_0167343795_p9887193012248"></a><a name="zh-cn_topic_0167343795_p9887193012248"></a>可以在python官网https://pypi.org/上搜索相关包进行安装。若使用pip3 install命令在线下载，可以使用如下命令指定相关版本进行下载，例如</p><p>pip3 install tornado==5.1.0  -i  指定库的安装源  --trusted-host  安装源的主机名</p>
     </td>
     </tr>
     </tbody>
