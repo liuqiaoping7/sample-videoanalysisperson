@@ -212,6 +212,7 @@ Before running the application, obtain the source code package and configure the
     **bash run\_videoanalysispersonapp.sh 192.168.1.2 video "/home/HwHiAiUser/sample/person.mp4" &**
     
     Example command of RTSP video stream:
+    
     **bash run\_videoanalysispersonapp.sh 192.168.1.2 video " "  "rtsp://192.168.2.37:554/cam/realmonitor?channel=1&subtype=0" &**
     
     >![](doc/source/img/icon-note.gif) **NOTE:**   
