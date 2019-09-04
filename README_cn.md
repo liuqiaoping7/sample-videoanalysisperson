@@ -210,7 +210,7 @@
     
     **bash run\_videoanalysispersonapp.sh 192.168.1.2 video "/home/HwHiAiUser/sample/person.mp4" &**
     
-    命令示例如下所示：
+    RTSP视频流的命令示例如下所示：
 
     **bash run_videoanalysispersonapp.sh 192.168.1.2 video " "  "rtsp://192.168.2.37:554/cam/realmonitor?channel=1&subtype=0" &**
     
